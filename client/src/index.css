@@ -1,0 +1,18 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+.mt-80{
+  margin-top: 80px;
+}
+
+.gap-20{
+  gap: 20px;
+}
+
+td, th{
+  padding: 10px;
+}
