@@ -2,25 +2,25 @@ const sequelize = require('../db');
 const {DataTypes} = require ('sequelize');
 
 const User = sequelize.define('user', {
-    user_id: {
+    id: {
         type: DataTypes.INTEGER,
         primaryKey: true,
         autoIncrement: true
     },
-    user_name: {
+    name: {
         type: DataTypes.STRING,
     },
-    user_email: {
+    email: {
         type: DataTypes.STRING,
         unique: true,
     },
-    user_password: {
+    password: {
         type: DataTypes.STRING
     },
-    user_last_seen: {
+    last_seen: {
         type: DataTypes.DATE
     },
-    user_is_blocked: {
+    is_blocked: {
         type: DataTypes.BOOLEAN,
         default: false
     }
