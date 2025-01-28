@@ -5,8 +5,11 @@
   font-family: sans-serif;
 }
 
-.mt-80{
-  margin-top: 80px;
+.mb-100{
+  margin-bottom: 100px;
+}
+.mb-10{
+  margin-bottom: 10px;
 }
 
 .gap-20{
