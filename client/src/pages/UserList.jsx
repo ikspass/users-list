@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { DataGrid } from '@mui/x-data-grid';
 import { Container } from 'react-bootstrap';
 import ToolBar from '../components/ToolBar';
@@ -11,7 +11,7 @@ const UserList = observer(() => {
     const {users} = useContext(Context);
     useEffect(() => {
         fetchUsers().then(data => users.setUsers(data))
-            .catch(error => console.error("Error fetching users:", error)); // Обработка ошибок
+            .catch(error => console.error("Error fetching users:", error));
     }, [users]);
 
     const columns = [
@@ -34,8 +34,6 @@ const UserList = observer(() => {
             editable: true,
         }
     ];
-
-    const [isDisabled, setIsDisabled] = useState(true);
 
     return (
         <Container>

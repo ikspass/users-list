@@ -1,0 +1,21 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+.mt-100{
+  margin-top: 100px;
+}
+.mb-10{
+  margin-bottom: 10px;
+}
+
+.gap-20{
+  gap: 20px;
+}
+
+td, th{
+  padding: 10px;
+}

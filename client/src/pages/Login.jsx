@@ -4,7 +4,6 @@ import { LOGIN_ROUTE, REGISTRATION_ROUTE, USERLIST_ROUTE } from '../utils/consts
 import { NavLink, useLocation, useNavigate } from 'react-router-dom';
 import { registration, login } from '../http/userAPI';
 import { Context } from '../index';
-import { useGridRowSelection } from '@mui/x-data-grid/internals';
 
 const Login = () => {
     const { user } = useContext(Context)
@@ -33,12 +32,12 @@ const Login = () => {
             user.setIsAuth(true);
             navigate(USERLIST_ROUTE)
         } catch (error) {
-            alert(error)
+            alert(error.response.data.message)
         }        
     }
 
     return (
-        <Container className="d-flex flex-column justify-content-center align-items-center">
+        <Container className="d-flex flex-column align-items-center" style={{marginTop: '100px'}}>
             <Form className='d-flex flex-column gap-3' style={{width: '400px'}}> 
                 <h2 className="align-self-start">{isLogin ? 'Sign In' : 'Sign Up'}</h2>
                 { !isLogin && <Form.Control className="form-control" placeholder="Name" value={name} onChange={e => setName(e.target.value)}/> }

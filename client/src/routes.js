@@ -3,14 +3,14 @@ import Login from "./pages/Login";
 import UserList from "./pages/UserList";
 
 export const authRoutes = [
-    
-]
-
-export const publicRoutes = [
     {
         path: USERLIST_ROUTE,
         Component: UserList
     },
+]
+
+export const publicRoutes = [
+    
     {
         path: LOGIN_ROUTE,
         Component: Login

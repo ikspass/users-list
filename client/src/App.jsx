@@ -1,4 +1,3 @@
-import ToolBar from './components/ToolBar';
 import NavBar from './components/NavBar';
 import React, { useContext, useState, useEffect } from 'react';
 import { BrowserRouter } from 'react-router-dom';
@@ -12,11 +11,18 @@ const App = observer( () => {
     const [loading, setLoading] = useState(true)
 
     useEffect(() => {
-        check().then(data => {
-            user.setUser(true)
-            user.setIsAuth(true)
-        }).finally( () => setLoading(false))
-    }, [])
+        check()
+            .then(data => {
+                user.setUser(true);
+                user.setIsAuth(true);
+            })
+            .catch(e => {
+                console.log(e.response.data.message);
+            })
+            .finally(() => {
+                setLoading(false);
+            });
+    }, []);
     return (
         <BrowserRouter>
             <NavBar />

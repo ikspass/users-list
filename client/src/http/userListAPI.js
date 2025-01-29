@@ -1,6 +1,6 @@
-import { $authHost, $host } from ".";
+import { $authHost } from ".";
 
 export const fetchUsers = async() => {
-    const {data} = await $host.get('api/userlist')
+    const {data} = await $authHost.get('api/userlist')
     return data;
 }
